@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boss.springcloud.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.Role">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="usercode" property="usercode"/>
+        <result column="password" property="password"/>
+        <result column="locked" property="locked"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, username,password, usercode,locked, create_time, update_time
+    </sql>
+
+    <select id="queryAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from springcloud_rbac.sys_user
+    </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into springcloud_rbac.sys_user(username,password, usercode,locked, create_time, update_time)
+      values (#{username},#{password},#{usercode},#{locked},now(), now())
+    </insert>
+
+    <delete id="deleteUserById" parameterType="int">
+        delete from springcloud_rbac.sys_user where id=#{id}
+    </delete>
+
+    <update id="updateRole" parameterType="User">
+        update springcloud_rbac.sys_user
+        set usercode = #{usercode},password = #{password},update_time = now()
+        where id = #{id}
+    </update>
+
+    <select id="getUserCode" resultType="String">
+        select usercode
+        from springcloud_rbac.sys_user
+    </select>
+
+    <select id="getUserPwd" resultType="String">
+        select password
+        from springcloud_rbac.sys_user
+    </select>
+</mapper>

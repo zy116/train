@@ -1,0 +1,13 @@
+
+_
+java:S1128"=Remove this unused import 'com.boss.springcloud.entity.Role'.(›‚»¥úÿÿÿÿ8â”Ÿš¹.
+`
+java:S1128"CRemove this unused import 'com.boss.springcloud.entity.Permission'.(éøë8îüº›¹.
+u
+java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.RestController'.(±íş¡şÿÿÿÿ8ÙÙ¼›¹.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8îüº›¹.
+c
+java:S1128"FRemove this unused import 'com.boss.springcloud.dao.PermissionMapper'.(ÿ¾¥ï8îüº›¹.
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8îüº›¹.

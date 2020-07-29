@@ -1,0 +1,33 @@
+
+M
+java:S1444"7Make this "public static NACOS_ROUTE_GROUP" field final(İÃ´
+M
+java:S1444"7Make this "public static NACOS_SERVER_ADDR" field final(°´ì
+p
+java:S3008"ZRename this field "NACOS_NAMESPACE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ—ÍÌ
+Q
+java:S2696 "6Make the enclosing method "static" or remove this set.(ƒÛ†‡úÿÿÿÿ
+K
+java:S1444"5Make this "public static NACOS_NAMESPACE" field final(Ñ—ÍÌ
+L
+java:S2696,"6Make the enclosing method "static" or remove this set.(ÑÕ÷–
+z
+java:S1104"_Make NACOS_ROUTE_DATA_ID a static final constant or non-public and provide accessors if needed.(‚ª™Şûÿÿÿÿ
+r
+java:S3008"\Rename this field "NACOS_SERVER_ADDR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°´ì
+y
+java:S3008"^Rename this field "NACOS_ROUTE_DATA_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚ª™Şûÿÿÿÿ
+s
+java:S1104"]Make NACOS_ROUTE_GROUP a static final constant or non-public and provide accessors if needed.(İÃ´
+r
+java:S3008"\Rename this field "NACOS_ROUTE_GROUP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İÃ´
+s
+java:S1104"]Make NACOS_SERVER_ADDR a static final constant or non-public and provide accessors if needed.(°´ì
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(ôÏîá
+T
+java:S1444"9Make this "public static NACOS_ROUTE_DATA_ID" field final(‚ª™Şûÿÿÿÿ
+q
+java:S1104"[Make NACOS_NAMESPACE a static final constant or non-public and provide accessors if needed.(Ñ—ÍÌ
+Q
+java:S2696&"6Make the enclosing method "static" or remove this set.(ƒïÓ¬şÿÿÿÿ

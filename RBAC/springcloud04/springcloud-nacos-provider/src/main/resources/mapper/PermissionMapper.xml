@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boss.springcloud.dao.PermissionMapper">
+    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.Do.Permission">
+        <id column="pid" property="id"/>
+        <result column="pname" property="name"/>
+        <result column="purl" property="url"/>
+        <result column="pavailable" property="available"/>
+        <result column="pcreate_time" property="createTime"/>
+        <result column="pupdate_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        pid, pname, purl, pavailable, pcreate_time, pupdate_time
+    </sql>
+
+    <select id="queryAllPermission" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from springcloud_rbac.sys_permission
+    </select>
+</mapper>

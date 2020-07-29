@@ -1,0 +1,21 @@
+
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÊßØ¿¹.
+S
+java:S1128	"1Remove this unused import 'java.util.Collection'.(¹ÉÐšùÿÿÿÿ8ÊßØ¿¹.
+l
+java:S1128"ORemove this unused import 'org.springframework.security.core.GrantedAuthority'.(½Á±ÿ8ÊßØ¿¹.
+C
+java:S1068"&Remove this unused "id" private field.(æ¨ç†8ÊßØ¿¹.
+I
+java:S1068",Remove this unused "usercode" private field.(Ù¡²±8ÊßØ¿¹.
+I
+java:S1068",Remove this unused "username" private field.(‘ó¹²8ÊßØ¿¹.
+N
+java:S1068",Remove this unused "password" private field.(œãë­úÿÿÿÿ8ÊßØ¿¹.
+L
+java:S1068"*Remove this unused "locked" private field.(“Â¡ªúÿÿÿÿ8ÊßØ¿¹.
+J
+java:S1068 ".Remove this unused "createTime" private field.(ßÈ¨L8ÊßØ¿¹.
+K
+java:S1068"".Remove this unused "updateTime" private field.(‡¾áá8ÊßØ¿¹.

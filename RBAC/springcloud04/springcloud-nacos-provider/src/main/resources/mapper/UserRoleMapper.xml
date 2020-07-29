@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boss.springcloud.dao.UserRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.Do.RolePermission">
+        <id column="yrid" property="id"/>
+        <result column="ur_role_id" property="roleId"/>
+        <result column="ur_user_id" property="userId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        urid, ur_role_id, ur_user_id
+    </sql>
+
+    <select id="queryAllUserRole" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from springcloud_rbac.sys_user_role
+    </select>
+
+    <insert id="addUserRole" parameterType="UserRole">
+        insert into springcloud_rbac.sys_user_role(ur_role_id,ur_user_id)
+      values (#{roleId}, #{userId})
+    </insert>
+
+    <delete id="deleteById" parameterType="int">
+        delete from springcloud_rbac.sys_user_role where urid=#{id}
+    </delete>
+
+    <update id="updateUserRole" parameterType="UserRole">
+        update springcloud_rbac.sys_user_role
+        set ur_role_id = #{roleId},ur_user_id = #{userId}
+        where urid = #{id}
+    </update>
+</mapper>

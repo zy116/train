@@ -15,31 +15,37 @@
         uid, username,password, usercode,locked, create_time, update_time
     </sql>
 
-    <select id="queryAllUser" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from springcloud_rbac.sys_user
-    </select>
+<!--    <select id="queryAllUser" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List"/>-->
+<!--        from springcloud_rbac.sys_user-->
+<!--    </select>-->
 
-    <insert id="addUser" parameterType="User">
-        insert into springcloud_rbac.sys_user(username,password, usercode,locked, create_time, update_time)
-      values (#{username},#{password},#{usercode},#{locked},now(), now())
-    </insert>
+<!--    <insert id="addUser" parameterType="User">-->
+<!--        insert into springcloud_rbac.sys_user(username,password, usercode,locked, create_time, update_time)-->
+<!--      values (#{username},#{password},#{usercode},#{locked},now(), now())-->
+<!--    </insert>-->
 
-    <delete id="deleteUserById" parameterType="int">
-        delete from springcloud_rbac.sys_user where id=#{id}
-    </delete>
+<!--    <delete id="deleteUserById" parameterType="int">-->
+<!--        delete from springcloud_rbac.sys_user where id=#{id}-->
+<!--    </delete>-->
 
-    <update id="updateRole" parameterType="User">
-        update springcloud_rbac.sys_user
-        set usercode = #{usercode},password = #{password},update_time = now()
-        where uid = #{id}
-    </update>
+<!--    <update id="updateRole" parameterType="User">-->
+<!--        update springcloud_rbac.sys_user-->
+<!--        set usercode = #{usercode},password = #{password},update_time = now()-->
+<!--        where uid = #{id}-->
+<!--    </update>-->
 
-    <select id="getUserCode" resultType="String">
-        select usercode,password
-        from springcloud_rbac.sys_user
-        where username=#{username}
-    </select>
+<!--    <select id="getUserCode" resultType="String">-->
+<!--        select usercode,password-->
+<!--        from springcloud_rbac.sys_user-->
+<!--        where username=#{username}-->
+<!--    </select>-->
+
+        <select id="getUserByName" resultType="com.boss.springcloud.entity.po.User">
+            select usercode,password
+            from springcloud_rbac.sys_user
+            where username=#{username}
+        </select>
 
 </mapper>

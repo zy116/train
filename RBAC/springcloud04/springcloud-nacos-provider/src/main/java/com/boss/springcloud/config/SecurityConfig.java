@@ -1,5 +1,6 @@
 package com.boss.springcloud.config;
 
+import com.boss.springcloud.service.UsersDetailsServiceImpl;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,6 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    UsersDetailsServiceImpl usersDetailsService;
 
     @Override //给页面授权
     protected void configure(HttpSecurity http) throws Exception {
@@ -36,9 +39,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override//认证，对应账号才能访问这是使用内存中的账号密码，死数据，不能用于数据库
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("lisi").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1","vip2")
-                .and()
-                .withUser("zhangsan").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1","vip2","vip3");
+//        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+//                .withUser("lisi").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1","vip2")
+//                .and()
+//                .withUser("zhangsan").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1","vip2","vip3");
+        auth.userDetailsService(usersDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
 }

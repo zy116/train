@@ -1,7 +1,7 @@
 package com.boss.springcloud.service.permissionservice;
 
 import com.boss.springcloud.dao.PermissionMapper;
-import com.boss.springcloud.entity.Do.Permission;
+import com.boss.springcloud.entity.po.Permission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

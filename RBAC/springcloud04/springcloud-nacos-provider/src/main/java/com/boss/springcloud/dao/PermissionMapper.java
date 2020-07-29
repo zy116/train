@@ -1,6 +1,6 @@
 package com.boss.springcloud.dao;
 
-import com.boss.springcloud.entity.Do.Permission;
+import com.boss.springcloud.entity.po.Permission;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

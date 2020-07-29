@@ -19,8 +19,6 @@ Yspringcloud-nacos-gateway/src/main/java/com/boss/springcloud/filter/LogGateWayF
 ]springcloud-nacos-gateway/src/main/java/com/boss/springcloud/service/DynamicRouteService.java,b\7\b706c0cb7e91b2d00b2889d4e94f277d61004db7
 Ü
 Vspringcloud-nacos-gateway/src/main/java/com/boss/springcloud/config/GatewayConfig.java,3\2\32163fb96520ee15d49364b657d2dd934e0ce507
-Ç
-Rspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/UserRole.java,7\1\71806bb4073ff65f8b3fb35a04083f887a5b8b1a
 Å
 Qspringcloud-nacos-provider/src/main/java/com/boss/springcloud/dao/UserMapper.java,7\e\7e3d1234266417cf86d9eb6b72bda95fc953bb61
 Ö
@@ -29,14 +27,6 @@ Uspringcloud-nacos-provider/src/main/java/com/boss/springcloud/dao/UserRoleMappe
 Qspringcloud-nacos-provider/src/main/java/com/boss/springcloud/dao/RoleMapper.java,a\6\a6859c87c1624adc0937553d05446a78b6a9ee38
 ã
 [springcloud-nacos-provider/src/main/java/com/boss/springcloud/dao/RolePermissionMapper.java,1\d\1dbbed5d082ce0e71f394291bf22062366956ff8
-Ñ
-Tspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/Permission.java,a\7\a721c0729a06e0e2c4272660255f3014212cdfaf
-~
-Nspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/Role.java,7\e\7e07d4804de70b4f7ae95888801fdcd56f1e3cce
-à
-Xspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/RolePermission.java,9\2\92d6f591f98d9936e4ffd424f977d7f894a2b37e
-~
-Nspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/User.java,7\8\7822d2f5078a0ee2ad8ba4266b02940aa0cbbd7a
 Ñ
 Tspringcloud-nacos-provider/src/main/java/com/boss/springcloud/NacosProvider6001.java,7\2\72185cbc7a44d270bbddee72086e50d3b39d4460
 à
@@ -79,5 +69,3 @@ zspringcloud-nacos-provider/src/main/java/com/boss/springcloud/service/rolepermi
 bspringcloud-nacos-provider/src/main/java/com/boss/springcloud/controller/PermissionController.java,2\1\21904667a331722622ca5bb9470441e165cb9555
 å
 \springcloud-nacos-provider/src/main/java/com/boss/springcloud/controller/RoleController.java,6\9\69069329b57a14f3dcd86f912b38584352dd5faf
-Ñ
-Tspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/vo/UsersVO.java,4\c\4c6a45179c63913be1fc915cdbd5bd17e5cec825

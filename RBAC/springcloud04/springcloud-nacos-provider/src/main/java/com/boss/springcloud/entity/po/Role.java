@@ -1,4 +1,4 @@
-package com.boss.springcloud.entity.Do;
+package com.boss.springcloud.entity.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package com.boss.springcloud.entity.vo;
 
-import com.boss.springcloud.entity.Do.UserRole;
+import com.boss.springcloud.entity.po.UserRole;
 
 /**
  * @author 12964

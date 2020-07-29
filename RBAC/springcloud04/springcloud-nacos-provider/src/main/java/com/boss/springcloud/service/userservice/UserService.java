@@ -1,6 +1,6 @@
 package com.boss.springcloud.service.userservice;
 
-import com.boss.springcloud.entity.Do.User;
+import com.boss.springcloud.entity.po.User;
 
 import java.util.List;
 

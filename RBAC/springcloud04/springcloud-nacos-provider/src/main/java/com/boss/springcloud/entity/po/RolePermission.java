@@ -1,4 +1,4 @@
-package com.boss.springcloud.entity.Do;
+package com.boss.springcloud.entity.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,15 +7,17 @@ import lombok.NoArgsConstructor;
 /**
  * @author 12964
  * @version 1.0
- * @date 2020/7/27 19:28
+ * @date 2020/7/27 19:27
  */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRole {
+public class RolePermission {
+
     private String id;
 
-    private String userId;
+    private String roleId;
 
-    private String RoleId;
+    private int permissionId;
 }

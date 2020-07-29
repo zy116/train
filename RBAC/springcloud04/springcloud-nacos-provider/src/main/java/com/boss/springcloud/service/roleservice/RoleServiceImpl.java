@@ -1,7 +1,7 @@
 package com.boss.springcloud.service.roleservice;
 
 import com.boss.springcloud.dao.RoleMapper;
-import com.boss.springcloud.entity.Do.Role;
+import com.boss.springcloud.entity.po.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.boss.springcloud.entity.vo;
 
-import com.boss.springcloud.entity.Do.RolePermission;
+import com.boss.springcloud.entity.po.RolePermission;
 
 /**
  * @author 12964

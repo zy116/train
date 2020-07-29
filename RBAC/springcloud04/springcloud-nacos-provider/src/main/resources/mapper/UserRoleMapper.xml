@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.boss.springcloud.dao.UserRoleMapper">
 
-    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.Do.RolePermission">
+    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.po.RolePermission">
         <id column="yrid" property="id"/>
         <result column="ur_role_id" property="roleId"/>
         <result column="ur_user_id" property="userId"/>

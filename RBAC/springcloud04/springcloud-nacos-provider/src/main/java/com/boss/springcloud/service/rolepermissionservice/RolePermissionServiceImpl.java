@@ -1,7 +1,7 @@
 package com.boss.springcloud.service.rolepermissionservice;
 
 import com.boss.springcloud.dao.RolePermissionMapper;
-import com.boss.springcloud.entity.Do.RolePermission;
+import com.boss.springcloud.entity.po.RolePermission;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.boss.springcloud.dao;
 
 
-import com.boss.springcloud.entity.Do.UserRole;
+import com.boss.springcloud.entity.po.UserRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

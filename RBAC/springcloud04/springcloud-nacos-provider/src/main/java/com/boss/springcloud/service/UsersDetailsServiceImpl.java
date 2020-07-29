@@ -1,28 +1,33 @@
 package com.boss.springcloud.service;
 
-import org.springframework.security.core.GrantedAuthority;
+import com.boss.springcloud.dao.UserMapper;
+import com.boss.springcloud.entity.po.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
-import java.util.Collection;
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  * @author 12964
  * @version 1.0
  * @date 2020/7/29 10:15
  */
-
+@Service
 public class UsersDetailsServiceImpl implements UserDetailsService {
-    private List<GrantedAuthority> authorities;
 
-    private String username;
+    @Autowired
+    private UserMapper userMapper;
 
-    private String password;
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userMapper.getUserByName(username);
+        if (user==null){
+            throw new UsernameNotFoundException("用户名不存在");
+        }
+
+
         return null;
     }
 }

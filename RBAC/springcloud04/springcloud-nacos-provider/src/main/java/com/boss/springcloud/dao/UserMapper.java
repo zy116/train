@@ -1,6 +1,6 @@
 package com.boss.springcloud.dao;
 
-import com.boss.springcloud.entity.Do.User;
+import com.boss.springcloud.entity.po.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -20,4 +20,6 @@ public interface UserMapper {
     String getUserCode();
 
     String getUserPwd();
+
+    User getUserByName(String name);
 }

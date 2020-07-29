@@ -1,6 +1,6 @@
 package com.boss.springcloud.service.permissionservice;
 
-import com.boss.springcloud.entity.Do.Permission;
+import com.boss.springcloud.entity.po.Permission;
 
 import java.util.List;
 

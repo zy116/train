@@ -1,7 +1,7 @@
 package com.boss.springcloud.service.userservice;
 
 import com.boss.springcloud.dao.UserMapper;
-import com.boss.springcloud.entity.Do.User;
+import com.boss.springcloud.entity.po.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

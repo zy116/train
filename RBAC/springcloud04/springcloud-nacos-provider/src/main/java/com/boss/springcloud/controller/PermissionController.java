@@ -1,6 +1,6 @@
 package com.boss.springcloud.controller;
 
-import com.boss.springcloud.entity.Do.Permission;
+import com.boss.springcloud.entity.po.Permission;
 import com.boss.springcloud.service.permissionservice.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

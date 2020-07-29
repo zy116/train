@@ -1,6 +1,6 @@
 package com.boss.springcloud.service.roleservice;
 
-import com.boss.springcloud.entity.Do.Role;
+import com.boss.springcloud.entity.po.Role;
 
 import java.util.List;
 

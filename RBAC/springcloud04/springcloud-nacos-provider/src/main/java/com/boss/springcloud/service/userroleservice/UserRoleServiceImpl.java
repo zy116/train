@@ -1,7 +1,7 @@
 package com.boss.springcloud.service.userroleservice;
 
 import com.boss.springcloud.dao.UserRoleMapper;
-import com.boss.springcloud.entity.Do.UserRole;
+import com.boss.springcloud.entity.po.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

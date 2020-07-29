@@ -1,7 +1,8 @@
-package com.boss.springcloud.service.roleservice;
+package com.boss.springcloud.service.impl;
 
 import com.boss.springcloud.dao.RoleMapper;
 import com.boss.springcloud.entity.po.Role;
+import com.boss.springcloud.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.List;
  */
 
 @Service
-public class RoleServiceImpl implements RoleService{
+public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleMapper roleMapper;

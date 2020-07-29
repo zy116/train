@@ -1,7 +1,8 @@
-package com.boss.springcloud.service.permissionservice;
+package com.boss.springcloud.service.impl;
 
 import com.boss.springcloud.dao.PermissionMapper;
 import com.boss.springcloud.entity.po.Permission;
+import com.boss.springcloud.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,7 @@ public class PermissionServiceImpl implements PermissionService {
     }
 
     @Override
-    public List<Permission> queryAllPermission() {
+    public List<String>  queryAllPermission() {
         return permissionMapper.queryAllPermission();
     }
 }

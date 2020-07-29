@@ -1,48 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.boss.springcloud.dao.UserMapper">
-    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.Role">
-        <id column="id" property="id"/>
+    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.po.User">
+        <id column="uid" property="id"/>
         <result column="username" property="username"/>
         <result column="usercode" property="usercode"/>
         <result column="password" property="password"/>
         <result column="locked" property="locked"/>
-        <result column="create_time" property="createTime"/>
-        <result column="update_time" property="updateTime"/>
+        <result column="ucreate_time" property="createTime"/>
+        <result column="uupdate_time" property="updateTime"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, username,password, usercode,locked, create_time, update_time
+        uid, username,password, usercode,locked, ucreate_time, uupdate_time
     </sql>
 
-    <select id="queryAllUser" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from springcloud_rbac.sys_user
-    </select>
+        <select id="queryAllUser" resultMap="BaseResultMap">
+            select
+            <include refid="Base_Column_List"/>
+            from springcloud_rbac.sys_user
+        </select>
 
-    <insert id="addUser" parameterType="User">
-        insert into springcloud_rbac.sys_user(username,password, usercode,locked, create_time, update_time)
-      values (#{username},#{password},#{usercode},#{locked},now(), now())
-    </insert>
+        <insert id="addUser" parameterType="User">
+            insert into springcloud_rbac.sys_user(username,password, usercode,locked, ucreate_time, uupdate_time)
+          values (#{username},#{password},#{usercode},#{locked},now(), now())
+        </insert>
 
-    <delete id="deleteUserById" parameterType="int">
-        delete from springcloud_rbac.sys_user where id=#{id}
-    </delete>
+        <delete id="deleteUserById" parameterType="int">
+            delete from springcloud_rbac.sys_user where id=#{id}
+        </delete>
 
-    <update id="updateRole" parameterType="User">
-        update springcloud_rbac.sys_user
-        set usercode = #{usercode},password = #{password},update_time = now()
-        where id = #{id}
-    </update>
+        <update id="updateRole" parameterType="User">
+            update springcloud_rbac.sys_user
+            set usercode = #{usercode},password = #{password},uupdate_time = now()
+            where uid = #{id}
+        </update>
 
-    <select id="getUserCode" resultType="String">
-        select usercode
-        from springcloud_rbac.sys_user
-    </select>
+    <!--    <select id="getUserCode" resultType="String">-->
+    <!--        select usercode,password-->
+    <!--        from springcloud_rbac.sys_user-->
+    <!--        where username=#{username}-->
+    <!--    </select>-->
 
-    <select id="getUserPwd" resultType="String">
-        select password
-        from springcloud_rbac.sys_user
-    </select>
+    <select id="getUserByName" resultType="com.boss.springcloud.entity.po.User">
+            select
+            <include refid="Base_Column_List"/>
+            from springcloud_rbac.sys_user
+            where usercode=#{usercode}
+        </select>
+
+    <select id="getAllRole" resultMap="RoleResultMap">
+            SELECT rname
+            FROM sys_role
+            LEFT JOIN sys_user_role ON sys_role.rid=sys_user_role.ur_role_id
+            LEFT JOIN sys_user ON sys_user.uid = sys_user_role.ur_user_id
+            WHERE sys_user.usercode = #{usercode}
+        </select>
+
+    <resultMap id="RoleResultMap" type="com.boss.springcloud.entity.po.Role">
+        <id column="rid" property="id"/>
+        <result column="rname" property="name"/>
+        <result column="ravailable" property="available"/>
+        <result column="rcreate_time" property="createTime"/>
+        <result column="rupdate_time" property="updateTime"/>
+    </resultMap>
 </mapper>

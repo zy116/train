@@ -14,9 +14,23 @@
         pid, pname, purl, pavailable, pcreate_time, pupdate_time
     </sql>
 
-    <select id="queryAllPermission" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from springcloud_rbac.sys_permission
+    <select id="queryAllPermission" resultType="string">
+        SELECT
+	        pname
+        FROM
+	        sys_permission
+	        LEFT JOIN sys_role_permission ON sys_permission.pid = sys_role_permission.srp_permission_id
+	        LEFT JOIN sys_role ON sys_role.rid = sys_role_permission.srp_role_id
+        WHERE
+	        sys_role.rname =(
+	    SELECT
+		rname
+	    FROM
+		    sys_role
+		    LEFT JOIN sys_user_role ON sys_role.rid = sys_user_role.ur_role_id
+		    LEFT JOIN sys_user ON sys_user.uid = sys_user_role.ur_user_id
+	    WHERE
+		    sys_user.usercode = #{usercode}
+	)
     </select>
 </mapper>

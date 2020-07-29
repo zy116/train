@@ -10,16 +10,15 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserMapper {
-//    int addUser(User user);
-//
-//    int deleteUserById(int id);
-//
-//    int updateUser(User user);
-//
-//    List<User> queryAllUser();
+    int addUser(User user);
+
+    int deleteUserById(int id);
+
+    int updateUser(User user);
+
+    String queryAllUser();
 
     User getUserByName(String name);
-
 
     List<Role> getAllRole(String name);
 }

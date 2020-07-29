@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.boss.springcloud.dao.RolePermissionMapper">
 
-    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.RolePermission">
-        <id column="id" property="id"/>
-        <result column="sys_role_id" property="roleId"/>
-        <result column="sys_permission_id" property="permissionId"/>
+    <resultMap id="BaseResultMap" type="com.boss.springcloud.entity.po.RolePermission">
+        <id column="srpid" property="id"/>
+        <result column="srp_role_id" property="roleId"/>
+        <result column="srp_permission_id" property="permissionId"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, sys_role_id, sys_permission_id
+        srrpid, srp_role_id, srp_permission_id
     </sql>
 
     <select id="queryAllRolePermission" resultMap="BaseResultMap">
@@ -19,18 +19,18 @@
     </select>
 
     <insert id="addRolePermission" parameterType="RolePermission">
-        insert into springcloud_rbac.sys_role_permission(sys_role_id,sys_permission_id)
+        insert into springcloud_rbac.sys_role_permission(srp_role_id,srp_permission_id)
       values (#{roleId}, #{permissionId})
     </insert>
 
     <delete id="deleteById" parameterType="int">
-        delete from springcloud_rbac.sys_role_permission where id=#{id}
+        delete from springcloud_rbac.sys_role_permission where srpid=#{id}
     </delete>
 
     <update id="updateRolePermission" parameterType="RolePermission">
         update springcloud_rbac.sys_role_permission
-        set sys_role_id = #{roleId},sys_permission_id = #{permissionId}
-        where id = #{id}
+        set srp_role_id = #{roleId},srp_permission_id = #{permissionId}
+        where srpid = #{id}
     </update>
 
 </mapper>

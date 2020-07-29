@@ -1,7 +1,7 @@
 package com.boss.springcloud.controller;
 
 import com.boss.springcloud.entity.po.Role;
-import com.boss.springcloud.service.roleservice.RoleService;
+import com.boss.springcloud.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,5 +1,6 @@
-package com.boss.springcloud.service;
+package com.boss.springcloud.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -15,6 +16,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationProviderImpl implements AuthenticationProvider {
+
+    @Autowired
     UsersDetailsServiceImpl usersDetailsService;
 
     @Override
@@ -22,14 +25,14 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         String username = (String) authentication.getPrincipal();
         String password = (String) authentication.getCredentials();
         UserDetails userDetails = usersDetailsService.loadUserByUsername(username);
-        if (userDetails.getPassword()==password) {
-            return new UsernamePasswordAuthenticationToken(userDetails, null,userDetails.getAuthorities());
+        if (userDetails.getPassword().equals(password)) {
+            return new UsernamePasswordAuthenticationToken(userDetails, password,userDetails.getAuthorities());
         }
         return null;
     }
 
     @Override
     public boolean supports(Class<?> aClass) {
-        return false;
+        return aClass.equals(UsernamePasswordAuthenticationToken.class);
     }
 }

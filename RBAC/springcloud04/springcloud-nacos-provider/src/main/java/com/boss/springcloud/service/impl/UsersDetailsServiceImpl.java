@@ -1,4 +1,4 @@
-package com.boss.springcloud.service;
+package com.boss.springcloud.service.impl;
 
 import com.boss.springcloud.dao.UserMapper;
 import com.boss.springcloud.entity.po.Role;

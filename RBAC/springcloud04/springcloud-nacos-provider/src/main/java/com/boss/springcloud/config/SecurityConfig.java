@@ -1,6 +1,10 @@
 package com.boss.springcloud.config;
 
-import com.boss.springcloud.service.UsersDetailsServiceImpl;
+import com.boss.springcloud.service.impl.AuthenticationProviderImpl;
+import com.boss.springcloud.service.impl.UsersDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,8 +18,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  */
 
 @EnableWebSecurity
+@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
     UsersDetailsServiceImpl usersDetailsService;
 
     @Override //给页面授权
@@ -24,9 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //请求授权的规则
         http.authorizeRequests()
                 .antMatchers("/").permitAll() //允许所有人看到这页
-                .antMatchers("/level1/**").hasRole("vip1")
-                .antMatchers("/level2/**").hasRole("vip2")
-                .antMatchers("/level3/**").hasRole("vip3");
+                .antMatchers("/level1/**").hasAnyRole("ADMIN")
+                .antMatchers("/level2/**").hasAnyRole("ADMIN,USER")
+                .antMatchers("/level3/**").hasAnyRole("ADMIN");
 
         //没有权限就默认跳转到登录页面 跳到"/login"
         http.formLogin();
@@ -37,12 +43,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.rememberMe();
     }
 
+    @Autowired
+    AuthenticationProviderImpl authenticationProvider;
+
     @Override//认证，对应账号才能访问这是使用内存中的账号密码，死数据，不能用于数据库
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
 //                .withUser("lisi").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1","vip2")
 //                .and()
 //                .withUser("zhangsan").password(new BCryptPasswordEncoder().encode("123456")).roles("vip1","vip2","vip3");
-        auth.userDetailsService(usersDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+//        auth.userDetailsService(usersDetailsService).passwordEncoder(new BCryptPasswordEncoder());
+        auth.authenticationProvider(authenticationProvider);
     }
 }

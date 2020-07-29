@@ -1,4 +1,4 @@
-package com.boss.springcloud.service.roleservice;
+package com.boss.springcloud.service;
 
 import com.boss.springcloud.entity.po.Role;
 

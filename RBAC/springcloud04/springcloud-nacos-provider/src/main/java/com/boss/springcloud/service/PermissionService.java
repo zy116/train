@@ -1,4 +1,4 @@
-package com.boss.springcloud.service.permissionservice;
+package com.boss.springcloud.service;
 
 
 import com.boss.springcloud.entity.po.Permission;
@@ -12,5 +12,5 @@ public interface PermissionService {
 
     int updatePermission(Permission permission);
 
-    List<Permission> queryAllPermission();
+    List<String> queryAllPermission();
 }

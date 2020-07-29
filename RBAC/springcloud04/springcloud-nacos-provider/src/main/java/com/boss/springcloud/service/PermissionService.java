@@ -12,5 +12,5 @@ public interface PermissionService {
 
     int updatePermission(Permission permission);
 
-    List<String> queryAllPermission();
+    List<String> queryAllPermission(String Name);
 }

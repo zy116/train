@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -20,8 +21,12 @@ public class PermissionController {
     @Autowired
     private PermissionService permissionService;
 
+    @Autowired
+    HttpSession httpSession;
+
     @RequestMapping("/query")
     public List<String> queryAll(){
-        return permissionService.queryAllPermission();
+        String name = (String) httpSession.getAttribute("name");
+        return permissionService.queryAllPermission(name);
     }
 }

@@ -15,5 +15,5 @@ public interface PermissionMapper {
 
     int updatePermission(Permission permission);
 
-    List<String>  queryAllPermission();
+    List<String>  queryAllPermission(String name);
 }

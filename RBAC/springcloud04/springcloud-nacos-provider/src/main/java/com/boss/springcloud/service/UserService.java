@@ -1,15 +1,11 @@
-package com.boss.springcloud.dao;
+package com.boss.springcloud.service;
 
 import com.boss.springcloud.entity.po.Role;
 import com.boss.springcloud.entity.po.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
-@Repository
-public interface UserMapper {
+public interface UserService {
     int addUser(User user);
 
     int deleteUserById(int id);

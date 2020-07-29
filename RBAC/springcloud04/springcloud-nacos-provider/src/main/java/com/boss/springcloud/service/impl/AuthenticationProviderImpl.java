@@ -8,6 +8,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @author 12964
  * @version 1.0
@@ -20,14 +22,19 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
     @Autowired
     UsersDetailsServiceImpl usersDetailsService;
 
+    @Autowired
+    HttpSession httpSession;
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = (String) authentication.getPrincipal();
         String password = (String) authentication.getCredentials();
         UserDetails userDetails = usersDetailsService.loadUserByUsername(username);
         if (userDetails.getPassword().equals(password)) {
+            httpSession.setAttribute("name",username);
             return new UsernamePasswordAuthenticationToken(userDetails, password,userDetails.getAuthorities());
         }
+        httpSession.setAttribute("name",null);
         return null;
     }
 

@@ -35,7 +35,7 @@ public class PermissionServiceImpl implements PermissionService {
     }
 
     @Override
-    public List<String>  queryAllPermission() {
-        return permissionMapper.queryAllPermission();
+    public List<String>  queryAllPermission(String name) {
+        return permissionMapper.queryAllPermission(name);
     }
 }

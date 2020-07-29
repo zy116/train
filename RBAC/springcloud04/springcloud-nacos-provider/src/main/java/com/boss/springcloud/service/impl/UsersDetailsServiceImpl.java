@@ -3,6 +3,7 @@ package com.boss.springcloud.service.impl;
 import com.boss.springcloud.dao.UserMapper;
 import com.boss.springcloud.entity.po.Role;
 import com.boss.springcloud.entity.po.User;
+import org.apache.catalina.session.StandardSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class UsersDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         User user = userMapper.getUserByName(username);
         if (user == null) {
             throw new UsernameNotFoundException("用户名不存在");

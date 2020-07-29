@@ -26,7 +26,6 @@ public class UsersDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserMapper userMapper;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userMapper.getUserByName(username);
@@ -44,6 +43,4 @@ public class UsersDetailsServiceImpl implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(),
                 user.getPassword(), authorities);
     }
-
-
 }

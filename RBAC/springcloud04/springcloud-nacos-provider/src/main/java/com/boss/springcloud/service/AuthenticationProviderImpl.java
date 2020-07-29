@@ -1,6 +1,7 @@
 package com.boss.springcloud.service;
 
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,7 +22,9 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         String username = (String) authentication.getPrincipal();
         String password = (String) authentication.getCredentials();
         UserDetails userDetails = usersDetailsService.loadUserByUsername(username);
-
+        if (userDetails.getPassword()==password) {
+            return new UsernamePasswordAuthenticationToken(userDetails, null,userDetails.getAuthorities());
+        }
         return null;
     }
 

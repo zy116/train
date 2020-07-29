@@ -36,17 +36,11 @@
             where uid = #{id}
         </update>
 
-    <!--    <select id="getUserCode" resultType="String">-->
-    <!--        select usercode,password-->
-    <!--        from springcloud_rbac.sys_user-->
-    <!--        where username=#{username}-->
-    <!--    </select>-->
-
-    <select id="getUserByName" resultType="com.boss.springcloud.entity.po.User">
+    <select id="getUserByName" resultMap="BaseResultMap">
             select
             <include refid="Base_Column_List"/>
             from springcloud_rbac.sys_user
-            where usercode=#{usercode}
+            where usercode= #{usercode}
         </select>
 
     <select id="getAllRole" resultMap="RoleResultMap">

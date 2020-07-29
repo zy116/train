@@ -1,6 +1,8 @@
 package com.boss.springcloud.controller;
 
+import com.boss.springcloud.entity.po.User;
 import com.boss.springcloud.service.PermissionService;
+import com.boss.springcloud.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,9 @@ public class NacosProviderController {
     private PermissionService permissionService;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     HttpSession httpSession;
 
     @ResponseBody
@@ -33,6 +38,13 @@ public class NacosProviderController {
     public List<String> queryAll(){
         String name = (String) httpSession.getAttribute("name");
         return permissionService.queryAllPermission(name);
+    }
+
+    @ResponseBody
+    @RequestMapping("/getUserByName")
+    public User getUserByName(){
+        String name = (String) httpSession.getAttribute("name");
+        return userService.getUserByName(name);
     }
 
     @RequestMapping({"/","/index"})

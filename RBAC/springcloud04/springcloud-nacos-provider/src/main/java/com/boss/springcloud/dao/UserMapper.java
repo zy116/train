@@ -16,6 +16,8 @@ public interface UserMapper {
 
     int updateUser(User user);
 
+    List<User> queryAllUser();
+
     User getUserByName(String name);
 
     List<Role> getAllRole(String name);

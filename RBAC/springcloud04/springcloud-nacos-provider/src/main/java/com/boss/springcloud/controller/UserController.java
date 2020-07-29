@@ -16,6 +16,7 @@ import java.util.List;
  */
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -36,10 +37,13 @@ public class UserController {
         return userService.updateUser(user);
     }
 
-//    @RequestMapping("/getUserByName/{name}")
-//    public User getUserByName(@PathVariable("name") String name){
-//        return userService.getUserByName(name);
-//    }
+    @ResponseBody
+    @RequestMapping("/queryAll")
+    public List<User> queryAll(){
+        return userService.queryAllUser();
+    }
+
+
 //
 //    @RequestMapping("/getAllRole/{name}")
 //    public List<Role> getAllRole(@PathVariable("name") String name){

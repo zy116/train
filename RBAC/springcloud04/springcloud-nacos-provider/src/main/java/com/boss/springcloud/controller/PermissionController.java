@@ -29,4 +29,6 @@ public class PermissionController {
         String name = (String) httpSession.getAttribute("name");
         return permissionService.queryAllPermission(name);
     }
+
+
 }

@@ -11,13 +11,13 @@
         <result column="uupdate_time" property="updateTime"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        uid, username,password, usercode,locked, ucreate_time, uupdate_time
-    </sql>
-
+<!--    <sql id="Base_Column_List">-->
+<!--        uid, username,password, usercode,locked, ucreate_time, uupdate_time-->
+<!--    </sql>-->
+<!--    <include refid="Base_Column_List"/>-->
         <select id="queryAllUser" resultMap="BaseResultMap">
             select
-            <include refid="Base_Column_List"/>
+            *
             from springcloud_rbac.sys_user
         </select>
 
@@ -38,7 +38,7 @@
 
     <select id="getUserByName" resultMap="BaseResultMap">
             select
-            <include refid="Base_Column_List"/>
+            username,password
             from springcloud_rbac.sys_user
             where usercode= #{usercode}
         </select>

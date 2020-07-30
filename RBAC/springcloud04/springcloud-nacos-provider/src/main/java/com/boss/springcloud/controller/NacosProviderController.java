@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
+ * 路由控制层，提供各种接口
  * @author 12964
  * @version 1.0
  * @date 2020/7/24 17:11
@@ -33,6 +34,12 @@ public class NacosProviderController {
     @Autowired
     HttpSession httpSession;
 
+    /*
+     * 获取当前用户所拥有的所有权限
+     * @author 12964
+     * @return java.util.List<java.lang.String>
+     * @date 2020/7/31 0:12
+     */
     @ResponseBody
     @RequestMapping("/query")
     public List<String> queryAll(){
@@ -40,6 +47,12 @@ public class NacosProviderController {
         return permissionService.queryAllPermission(name);
     }
 
+    /*
+     * 得到当前用户的所有信息
+     * @author 12964
+     * @return com.boss.springcloud.entity.po.User
+     * @date 2020/7/31 0:12
+     */
     @ResponseBody
     @RequestMapping("/getUserByName")
     public User getUserByName(){
@@ -47,28 +60,40 @@ public class NacosProviderController {
         return userService.getUserByName(name);
     }
 
+    /*
+     * 跳转到首页
+     * @author 12964
+     * @return java.lang.String
+     * @date 2020/7/31 0:12
+     */
     @RequestMapping({"/","/index"})
     public String index(){
         return "index";
     }
 
+    /*
+     * 跳转到登陆页面，toLogin跳转的是security自带的登录页面
+     * @author 12964
+     * @return java.lang.String
+     * @date 2020/7/31 0:13
+     */
     @RequestMapping("/toLogin")
     public String toLogin(){
         return "views/login";
     }
 
-    @RequestMapping("/level1/{id}")
-    public String level1(@PathVariable("id") int id){
-        return "views/level1/"+id;
-    }
-
-    @RequestMapping("/level2/{id}")
-    public String level2(@PathVariable("id") int id){
-        return "views/level2/"+id;
-    }
-
-    @RequestMapping("/level3/{id}")
-    public String level3(@PathVariable("id") int id){
-        return "views/level3/"+id;
-    }
+//    @RequestMapping("/level1/{id}")
+//    public String level1(@PathVariable("id") int id){
+//        return "views/level1/"+id;
+//    }
+//
+//    @RequestMapping("/level2/{id}")
+//    public String level2(@PathVariable("id") int id){
+//        return "views/level2/"+id;
+//    }
+//
+//    @RequestMapping("/level3/{id}")
+//    public String level3(@PathVariable("id") int id){
+//        return "views/level3/"+id;
+//    }
 }

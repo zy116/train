@@ -43,8 +43,9 @@ public class NacosProviderController {
     @ResponseBody
     @RequestMapping("/query")
     public List<String> queryAll(){
-        String name = (String) httpSession.getAttribute("name");
-        return permissionService.queryAllPermission(name);
+//        String name = (String) httpSession.getAttribute("name");
+//        return permissionService.queryAllPermission(name);
+        return permissionService.queryAllPermission("zouyou");
     }
 
     /*

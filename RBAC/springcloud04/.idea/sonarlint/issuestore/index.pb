@@ -59,3 +59,5 @@ s
 Cspringcloud-nacos-provider/src/main/resources/mapper/UserMapper.xml,0\5\05152f5b62ce870b1382df09249204f2357abcee
 o
 ?springcloud-nacos-provider/target/classes/mapper/UserMapper.xml,9\7\977ecf3c1afd97977090ccc11f9b0e2e4170a6d5
+„
+Tspringcloud-nacos-provider/src/main/java/com/boss/springcloud/config/CrosConfig.java,b\3\b3a5a16fb1be2233a1e8cccedcd7accebe424b83

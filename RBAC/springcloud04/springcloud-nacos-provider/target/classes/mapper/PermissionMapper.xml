@@ -20,4 +20,31 @@
 		    sys_user.usercode = #{usercode}
 	)
     </select>
+
+	<resultMap id="BaseResultMap" type="com.boss.springcloud.entity.po.Permission">
+		<id column="rid" property="id"/>
+		<result column="rname" property="name"/>
+		<result column="ravailable" property="available"/>
+		<result column="rcreate_time" property="createTime"/>
+		<result column="rupdate_time" property="updateTime"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+        rid, rname, ravailable, rcreate_time, rupdate_time
+    </sql>
+
+	<insert id="addRole" parameterType="Role">
+        insert into springcloud_rbac.sys_role(rname,ravailable,rcreate_time,rupdate_time)
+      values (#{name},#{available},now(), now())
+    </insert>
+
+	<delete id="deleteById" parameterType="int">
+        delete from springcloud_rbac.sys_role where rid=#{id}
+    </delete>
+
+	<update id="updateRole" parameterType="Role">
+        update springcloud_rbac.sys_role
+        set rname = #{name},ravailable = #{available},rupdate_time = now()
+        where rid = #{id}
+    </update>
 </mapper>

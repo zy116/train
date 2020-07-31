@@ -53,3 +53,9 @@ bspringcloud-nacos-provider/src/main/java/com/boss/springcloud/controller/Permis
 Qspringcloud-nacos-provider/src/main/java/com/boss/springcloud/entity/po/User.java,d\9\d953439045f418028b1a8c661b2b09d7b638297e
 è
 _springcloud-nacos-provider/src/main/java/com/boss/springcloud/service/impl/UserServiceImpl.java,b\4\b4dc12ab649d379f0c5d9a0e1109e2ce22006feb
+y
+Ispringcloud-nacos-provider/src/main/resources/mapper/PermissionMapper.xml,4\f\4fa249539185ab1a1439ae2c31346fb38056e976
+s
+Cspringcloud-nacos-provider/src/main/resources/mapper/UserMapper.xml,0\5\05152f5b62ce870b1382df09249204f2357abcee
+o
+?springcloud-nacos-provider/target/classes/mapper/UserMapper.xml,9\7\977ecf3c1afd97977090ccc11f9b0e2e4170a6d5
